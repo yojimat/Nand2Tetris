@@ -18,7 +18,7 @@
   <lib desc="#BFH-Praktika" name="9"/>
   <lib desc="#Soc" name="10"/>
   <lib desc="#Input/Output-Extra" name="11"/>
-  <main name="main"/>
+  <main name="sixtyFourRegisterRam"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -51,40 +51,6 @@
     <tool lib="4" name="D Flip-Flop"/>
     <tool lib="4" name="Register"/>
   </toolbar>
-  <circuit name="main">
-    <a name="appearance" val="logisim_evolution"/>
-    <a name="circuit" val="main"/>
-    <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(280,290)" name="Clock"/>
-    <comp lib="2" loc="(240,240)" name="Multiplexer"/>
-    <comp lib="4" loc="(310,220)" name="D Flip-Flop">
-      <a name="appearance" val="logisim_evolution"/>
-    </comp>
-    <comp lib="5" loc="(150,240)" name="Button"/>
-    <comp lib="5" loc="(200,320)" name="Button"/>
-    <comp lib="5" loc="(400,230)" name="LED"/>
-    <comp lib="5" loc="(400,270)" name="LED"/>
-    <wire from="(150,240)" to="(170,240)"/>
-    <wire from="(170,240)" to="(170,250)"/>
-    <wire from="(170,250)" to="(210,250)"/>
-    <wire from="(200,170)" to="(200,230)"/>
-    <wire from="(200,170)" to="(380,170)"/>
-    <wire from="(200,230)" to="(210,230)"/>
-    <wire from="(200,320)" to="(220,320)"/>
-    <wire from="(210,230)" to="(210,240)"/>
-    <wire from="(220,250)" to="(220,260)"/>
-    <wire from="(220,260)" to="(220,320)"/>
-    <wire from="(240,230)" to="(240,240)"/>
-    <wire from="(240,240)" to="(300,240)"/>
-    <wire from="(280,290)" to="(300,290)"/>
-    <wire from="(300,230)" to="(300,240)"/>
-    <wire from="(300,270)" to="(300,290)"/>
-    <wire from="(360,230)" to="(380,230)"/>
-    <wire from="(360,270)" to="(400,270)"/>
-    <wire from="(380,170)" to="(380,230)"/>
-    <wire from="(380,230)" to="(400,230)"/>
-  </circuit>
   <circuit name="oneBitRegister">
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="oneBitRegister"/>
@@ -563,5 +529,50 @@
     <wire from="(360,180)" to="(370,180)"/>
     <wire from="(370,90)" to="(370,100)"/>
     <wire from="(610,180)" to="(620,180)"/>
+  </circuit>
+  <circuit name="fiveHundredTwelveRegisterRam">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="fiveHundredTwelveRegisterRam"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <comp lib="0" loc="(330,230)" name="Clock"/>
+    <comp lib="0" loc="(350,160)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="address"/>
+      <a name="radix" val="16"/>
+      <a name="width" val="9"/>
+    </comp>
+    <comp lib="0" loc="(350,200)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="load"/>
+    </comp>
+    <comp lib="0" loc="(350,270)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="inp"/>
+      <a name="radix" val="16"/>
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(630,240)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="outp"/>
+      <a name="output" val="true"/>
+      <a name="radix" val="16"/>
+      <a name="width" val="16"/>
+    </comp>
+    <comp lib="4" loc="(370,150)" name="RAM">
+      <a name="addrWidth" val="9"/>
+      <a name="appearance" val="logisim_evolution"/>
+      <a name="dataWidth" val="16"/>
+      <a name="enables" val="line"/>
+      <a name="type" val="nonvolatile"/>
+    </comp>
+    <wire from="(330,230)" to="(370,230)"/>
+    <wire from="(350,160)" to="(370,160)"/>
+    <wire from="(350,200)" to="(370,200)"/>
+    <wire from="(350,240)" to="(350,270)"/>
+    <wire from="(350,240)" to="(370,240)"/>
+    <wire from="(370,220)" to="(370,230)"/>
+    <wire from="(610,240)" to="(630,240)"/>
   </circuit>
 </project>
