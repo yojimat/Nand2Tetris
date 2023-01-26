@@ -22,4 +22,4 @@ Have a taste of:
 - Execute an infinite loop that listens to the keyboard input;
 - When a key is pressed(any key), execute code that writes "black" in every pixel;
 - When no key is pressed, execute code that writes "white" in every pixel;
-*Tip*: This program requires working with pointers.
+*Tip*: This program requires working with pointers. Use [JackBitmapEditor](https://github.com/ErikUmble/JackBitmapEditor) for more hints.
